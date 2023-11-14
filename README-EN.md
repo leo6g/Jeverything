@@ -35,6 +35,7 @@ Fast File Search Tool, Similar to Everything, Feature-Rich, Smooth Performance. 
  If Java is not installed, you can download the version that includes JRE: 
 
 [JEverything_JRE_windows.zip](https://github.com/leo6g/Jeverything/releases)
+
 ###### **JAR** 
 The JAR file can run on Windows, Mac, and Linux platforms
 
