@@ -1,3 +1,12 @@
+<p align="center">
+    <br> <a href="README-EN.md">English</a>  | <a href="README.md">中文</a>
+</p>
+<p align="center">
+    <em>Jeverything,search everything in your device.</em>
+</p>
+
+
+
 快速搜索文件工具，类似Everything工具,功能丰富，运行丝滑。极速搜索文件，支持高级搜索，局域网分享、快传、文件在线预览、音视频播放、推流等功能，全搞定。
 同时可部署到服务端实现远程文件管理。JAVA版Everything
 
@@ -48,11 +57,11 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 ##### 界面展示：
 
-![1699930678792](D:\workgitee\Jeverything\README.assets\1699930678792.png)
+![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 ---------------
-![1699930849360](D:\workgitee\Jeverything\README.assets\1699930849360.png)
+![1699930849360](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930849360.png)
 ---------------
-![1699931976545](D:\workgitee\Jeverything\README.assets\1699931976545.png)
+![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
 ##### 使用说明：
 
@@ -60,14 +69,14 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 首次启动，可进行系统初始化设置。
 
-![1699930678792](D:\workgitee\Jeverything\README.assets\1699930678792.png)
+![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 
 主界面，默认显示最近一天变动文件列表，可通过文件类型筛选不同类型文件变动。双击文件记录，可直接打开本地文件。双击远程文件可在线预览
 
 
 ##### 
 
-![1699930849360](D:\workgitee\Jeverything\README.assets\1699930849360.png)
+![1699930849360](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930849360.png)
 
 
 
@@ -75,29 +84,29 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 基本设置
 
-![1699931135884](D:\workgitee\Jeverything\README.assets\1699931135884.png)
+![1699931135884](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931135884.png)
 
 可通过添加 文件后缀 来自定义索引，建议索引后，文件类型为其它文件
 
-![1699931248511](D:\workgitee\Jeverything\README.assets\1699931248511.png)
+![1699931248511](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931248511.png)
 
 建立索引可选择是否监听文件变动，更改后实时生效，监听机制只需消耗很小（可忽略不计）的计算机资源，就可以监听全部文件变动。
 
 图片预览
 
-![1699931927037](D:\workgitee\Jeverything\README.assets\1699931927037.png)
+![1699931927037](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931927037.png)
 
 视频播放
 
-![1699931976545](D:\workgitee\Jeverything\README.assets\1699931976545.png)
+![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
 音频播放
 
-![1699932014761](D:\workgitee\Jeverything\README.assets\1699932014761.png)
+![1699932014761](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932014761.png)
 
 音频后台播放
 
-![1699932031613](D:\workgitee\Jeverything\README.assets\1699932031613.png)
+![1699932031613](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932031613.png)
 
 
 

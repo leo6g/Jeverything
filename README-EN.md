@@ -1,3 +1,10 @@
+<p align="center">
+    <br> <a href="README-EN.md">English</a>  | <a href="README.md">中文</a>
+</p>
+<p align="center">
+    <em>Jeverything,search everything in your device.</em>
+</p>
+
 Fast File Search Tool, Similar to Everything, Feature-Rich, Smooth Performance. Lightning-fast file search, advanced search support, LAN sharing, fast file transfer, online file preview, audio/video playback, streaming, etc., all in one. Also deployable on the server for remote file management. JAVA version of Everything.
 
 ##### Features::
@@ -45,11 +52,11 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 ##### User Interface Showcase:
 
-![1699930678792](D:\workgitee\Jeverything\README.assets\1699930678792.png)
+![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 ---------------
-![1699930849360](D:\workgitee\Jeverything\README.assets\1699930849360.png)
+![1699930849360](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930849360.png)
 ---------------
-![1699931976545](D:\workgitee\Jeverything\README.assets\1699931976545.png)
+![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
 ##### Instructions for Use：
 
@@ -57,14 +64,14 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 During the initial startup, you can configure system settings.
 
-![1699930678792](D:\workgitee\Jeverything\README.assets\1699930678792.png)
+![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 
 Main Interface: By default, it displays a list of files that have changed in the last day. You can filter different types of file changes by file type. Double-clicking on a file record allows you to directly open the local file. Double-clicking on a remote file enables online preview.
 
 
 ##### 
 
-![1699930849360](D:\workgitee\Jeverything\README.assets\1699930849360.png)
+![1699930849360](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930849360.png)
 
 
 
@@ -72,29 +79,29 @@ Main Interface: By default, it displays a list of files that have changed in the
 
 Basic Settings
 
-![1699931135884](D:\workgitee\Jeverything\README.assets\1699931135884.png)
+![1699931135884](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931135884.png)
 
 You can customize the index by adding file extensions. It is recommended that after indexing, the file type be set to "Other Files."
 
-![1699931248511](D:\workgitee\Jeverything\README.assets\1699931248511.png)
+![1699931248511](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931248511.png)
 
 Establishing an index allows you to choose whether to monitor file changes. Changes take effect in real-time after modification. The monitoring mechanism consumes minimal (almost negligible) computer resources to monitor all file changes.
 
 Image preview
 
-![1699931927037](D:\workgitee\Jeverything\README.assets\1699931927037.png)
+![1699931927037](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931927037.png)
 
 video play
 
-![1699931976545](D:\workgitee\Jeverything\README.assets\1699931976545.png)
+![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
 audio play
 
-![1699932014761](D:\workgitee\Jeverything\README.assets\1699932014761.png)
+![1699932014761](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932014761.png)
 
 audio play in background 
 
-![1699932031613](D:\workgitee\Jeverything\README.assets\1699932031613.png)
+![1699932031613](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932031613.png)
 
 
 
