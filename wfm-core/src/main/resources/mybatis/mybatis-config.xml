@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J" />
+    </settings>
+    <plugins>
+        <!-- PageHelper分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+
+            <!-- 4.0.0 以上版本可自动识别 -->
+            <property name="dialect" value="h2"/>
+
+            <!-- RowBounds:参数offset作为PageNum使用 - 默认不使用 -->
+            <property name="offsetAsPageNum" value="false"/>
+
+            <!-- RowBounds:是否进行count查询 - 默认不查询 -->
+            <property name="rowBoundsWithCount" value="false"/>
+
+            <!-- 当设置为true的时候，如果pagesize设置为0（或RowBounds的limit=0），就不执行分页，返回全部结果 -->
+            <property name="pageSizeZero" value="true"/>
+
+            <!-- 分页合理化 -->
+            <property name="reasonable" value="false"/>
+
+            <!-- 是否支持接口参数来传递分页参数，默认false -->
+            <property name="supportMethodsArguments" value="false"/>
+
+            <!-- 是否返回分页信息 -->
+            <property name="returnPageInfo" value="none"/>
+        </plugin>
+    </plugins>
+
+</configuration>

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="only.leo.wfm.core.dao.FileMetaDOMapper">
+  <resultMap id="BaseResultMap" type="only.leo.wfm.common.beans.FileMetaDO">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FILE_SIZE" jdbcType="BIGINT" property="fileSize" />
+    <result column="FILE_TYPE" jdbcType="TINYINT" property="fileType" />
+    <result column="INDEX_ID" jdbcType="SMALLINT" property="indexId" />
+    <result column="DIRECTORY_ID" jdbcType="INTEGER" property="directoryId" />
+    <result column="FILE_MODIFY_TIME" jdbcType="TIMESTAMP" property="fileModifyTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, FILE_NAME, FILE_SIZE, FILE_TYPE, INDEX_ID, DIRECTORY_ID, FILE_MODIFY_TIME
+  </sql>
+  <select id="selectByExample" parameterType="only.leo.wfm.common.beans.FileMetaDOExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from FILE_META_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="top != null">
+      FETCH FIRST ${top} ROWS ONLY
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from FILE_META_TABLE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="existByPrimaryKey" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select
+    1
+    from FILE_META_TABLE
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from FILE_META_TABLE
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="only.leo.wfm.common.beans.FileMetaDOExample">
+    delete from FILE_META_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="only.leo.wfm.common.beans.FileMetaDO">
+    insert into FILE_META_TABLE (ID, FILE_NAME, FILE_SIZE, 
+      FILE_TYPE, INDEX_ID, DIRECTORY_ID, 
+      FILE_MODIFY_TIME)
+    values (#{id,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{fileSize,jdbcType=BIGINT}, 
+      #{fileType,jdbcType=TINYINT}, #{indexId,jdbcType=SMALLINT}, #{directoryId,jdbcType=INTEGER}, 
+      #{fileModifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="batchInsert" parameterType="java.util.List">
+    insert into FILE_META_TABLE (ID, FILE_NAME, FILE_SIZE,
+      FILE_TYPE, INDEX_ID, DIRECTORY_ID,
+      FILE_MODIFY_TIME)
+    values
+    <foreach close="" collection="list" item="item" open="" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.fileName,jdbcType=VARCHAR}, #{item.fileSize,jdbcType=BIGINT},
+      #{item.fileType,jdbcType=TINYINT}, #{item.indexId,jdbcType=SMALLINT}, #{item.directoryId,jdbcType=INTEGER},
+      #{item.fileModifyTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertSelective" parameterType="only.leo.wfm.common.beans.FileMetaDO">
+    insert into FILE_META_TABLE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="fileName != null">
+        FILE_NAME,
+      </if>
+      <if test="fileSize != null">
+        FILE_SIZE,
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE,
+      </if>
+      <if test="indexId != null">
+        INDEX_ID,
+      </if>
+      <if test="directoryId != null">
+        DIRECTORY_ID,
+      </if>
+      <if test="fileModifyTime != null">
+        FILE_MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        #{fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="fileType != null">
+        #{fileType,jdbcType=TINYINT},
+      </if>
+      <if test="indexId != null">
+        #{indexId,jdbcType=SMALLINT},
+      </if>
+      <if test="directoryId != null">
+        #{directoryId,jdbcType=INTEGER},
+      </if>
+      <if test="fileModifyTime != null">
+        #{fileModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="only.leo.wfm.common.beans.FileMetaDOExample" resultType="java.lang.Long">
+    select count(*) from FILE_META_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update FILE_META_TABLE
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileName != null">
+        FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileSize != null">
+        FILE_SIZE = #{record.fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="record.fileType != null">
+        FILE_TYPE = #{record.fileType,jdbcType=TINYINT},
+      </if>
+      <if test="record.indexId != null">
+        INDEX_ID = #{record.indexId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.directoryId != null">
+        DIRECTORY_ID = #{record.directoryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileModifyTime != null">
+        FILE_MODIFY_TIME = #{record.fileModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update FILE_META_TABLE
+    set ID = #{record.id,jdbcType=VARCHAR},
+      FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      FILE_SIZE = #{record.fileSize,jdbcType=BIGINT},
+      FILE_TYPE = #{record.fileType,jdbcType=TINYINT},
+      INDEX_ID = #{record.indexId,jdbcType=SMALLINT},
+      DIRECTORY_ID = #{record.directoryId,jdbcType=INTEGER},
+      FILE_MODIFY_TIME = #{record.fileModifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="only.leo.wfm.common.beans.FileMetaDO">
+    update FILE_META_TABLE
+    <set>
+      <if test="fileName != null">
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null">
+        FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE = #{fileType,jdbcType=TINYINT},
+      </if>
+      <if test="indexId != null">
+        INDEX_ID = #{indexId,jdbcType=SMALLINT},
+      </if>
+      <if test="directoryId != null">
+        DIRECTORY_ID = #{directoryId,jdbcType=INTEGER},
+      </if>
+      <if test="fileModifyTime != null">
+        FILE_MODIFY_TIME = #{fileModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="only.leo.wfm.common.beans.FileMetaDO">
+    update FILE_META_TABLE
+    set FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      FILE_SIZE = #{fileSize,jdbcType=BIGINT},
+      FILE_TYPE = #{fileType,jdbcType=TINYINT},
+      INDEX_ID = #{indexId,jdbcType=SMALLINT},
+      DIRECTORY_ID = #{directoryId,jdbcType=INTEGER},
+      FILE_MODIFY_TIME = #{fileModifyTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

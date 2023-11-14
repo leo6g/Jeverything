@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="only.leo.wfm.core.dao.ShareFileDOMapper">
+  <resultMap id="BaseResultMap" type="only.leo.wfm.common.beans.ShareFileDO">
+    <id column="CODE" jdbcType="VARCHAR" property="code" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FETCH_CODE" jdbcType="VARCHAR" property="fetchCode" />
+    <result column="DOWNLOAD_COUNT" jdbcType="INTEGER" property="downloadCount" />
+    <result column="ENABLE" jdbcType="BOOLEAN" property="enable" />
+    <result column="SHARE_TIME" jdbcType="TIMESTAMP" property="shareTime" />
+    <result column="INVALID_TIME" jdbcType="TIMESTAMP" property="invalidTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    CODE, FILE_NAME, FETCH_CODE, DOWNLOAD_COUNT, ENABLE, SHARE_TIME, INVALID_TIME
+  </sql>
+  <select id="selectByExample" parameterType="only.leo.wfm.common.beans.ShareFileDOExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from SHARE_FILE_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SHARE_FILE_TABLE
+    where CODE = #{code,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SHARE_FILE_TABLE
+    where CODE = #{code,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="only.leo.wfm.common.beans.ShareFileDOExample">
+    delete from SHARE_FILE_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="only.leo.wfm.common.beans.ShareFileDO">
+    insert into SHARE_FILE_TABLE (CODE, FILE_NAME, FETCH_CODE, 
+      DOWNLOAD_COUNT, ENABLE, SHARE_TIME, 
+      INVALID_TIME)
+    values (#{code,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{fetchCode,jdbcType=VARCHAR}, 
+      #{downloadCount,jdbcType=INTEGER}, #{enable,jdbcType=BOOLEAN}, #{shareTime,jdbcType=TIMESTAMP}, 
+      #{invalidTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="only.leo.wfm.common.beans.ShareFileDO">
+    insert into SHARE_FILE_TABLE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        CODE,
+      </if>
+      <if test="fileName != null">
+        FILE_NAME,
+      </if>
+      <if test="fetchCode != null">
+        FETCH_CODE,
+      </if>
+      <if test="downloadCount != null">
+        DOWNLOAD_COUNT,
+      </if>
+      <if test="enable != null">
+        ENABLE,
+      </if>
+      <if test="shareTime != null">
+        SHARE_TIME,
+      </if>
+      <if test="invalidTime != null">
+        INVALID_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fetchCode != null">
+        #{fetchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadCount != null">
+        #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        #{enable,jdbcType=BOOLEAN},
+      </if>
+      <if test="shareTime != null">
+        #{shareTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invalidTime != null">
+        #{invalidTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="only.leo.wfm.common.beans.ShareFileDOExample" resultType="java.lang.Long">
+    select count(*) from SHARE_FILE_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update SHARE_FILE_TABLE
+    <set>
+      <if test="record.code != null">
+        CODE = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileName != null">
+        FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fetchCode != null">
+        FETCH_CODE = #{record.fetchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.downloadCount != null">
+        DOWNLOAD_COUNT = #{record.downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.enable != null">
+        ENABLE = #{record.enable,jdbcType=BOOLEAN},
+      </if>
+      <if test="record.shareTime != null">
+        SHARE_TIME = #{record.shareTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.invalidTime != null">
+        INVALID_TIME = #{record.invalidTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update SHARE_FILE_TABLE
+    set CODE = #{record.code,jdbcType=VARCHAR},
+      FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      FETCH_CODE = #{record.fetchCode,jdbcType=VARCHAR},
+      DOWNLOAD_COUNT = #{record.downloadCount,jdbcType=INTEGER},
+      ENABLE = #{record.enable,jdbcType=BOOLEAN},
+      SHARE_TIME = #{record.shareTime,jdbcType=TIMESTAMP},
+      INVALID_TIME = #{record.invalidTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="only.leo.wfm.common.beans.ShareFileDO">
+    update SHARE_FILE_TABLE
+    <set>
+      <if test="fileName != null">
+        FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fetchCode != null">
+        FETCH_CODE = #{fetchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadCount != null">
+        DOWNLOAD_COUNT = #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="enable != null">
+        ENABLE = #{enable,jdbcType=BOOLEAN},
+      </if>
+      <if test="shareTime != null">
+        SHARE_TIME = #{shareTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invalidTime != null">
+        INVALID_TIME = #{invalidTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where CODE = #{code,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="only.leo.wfm.common.beans.ShareFileDO">
+    update SHARE_FILE_TABLE
+    set FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      FETCH_CODE = #{fetchCode,jdbcType=VARCHAR},
+      DOWNLOAD_COUNT = #{downloadCount,jdbcType=INTEGER},
+      ENABLE = #{enable,jdbcType=BOOLEAN},
+      SHARE_TIME = #{shareTime,jdbcType=TIMESTAMP},
+      INVALID_TIME = #{invalidTime,jdbcType=TIMESTAMP}
+    where CODE = #{code,jdbcType=VARCHAR}
+  </update>
+</mapper>

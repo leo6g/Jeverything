@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="only.leo.wfm.core.dao.IndexDirectoryDOMapper">
+  <resultMap id="BaseResultMap" type="only.leo.wfm.common.beans.IndexDirectoryDO">
+    <id column="id" jdbcType="SMALLINT" property="id" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="listen" jdbcType="BIT" property="listen" />
+    <result column="is_remote" jdbcType="BIT" property="isRemote" />
+    <result column="protocol" jdbcType="TINYINT" property="protocol" />
+    <result column="authentication" jdbcType="VARCHAR" property="authentication" />
+    <result column="index_time" jdbcType="TIMESTAMP" property="indexTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, path, listen, is_remote, protocol, authentication, index_time
+  </sql>
+  <select id="selectByExample" parameterType="only.leo.wfm.common.beans.IndexDirectoryDOExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from INDEX_DIRECTORY_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from INDEX_DIRECTORY_TABLE
+    where id = #{id,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from INDEX_DIRECTORY_TABLE
+    where id = #{id,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="only.leo.wfm.common.beans.IndexDirectoryDOExample">
+    delete from INDEX_DIRECTORY_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="only.leo.wfm.common.beans.IndexDirectoryDO" useGeneratedKeys="true" keyProperty="id">
+    insert into INDEX_DIRECTORY_TABLE (id, path, listen, 
+      is_remote, protocol, authentication, 
+      index_time)
+    values (#{id,jdbcType=SMALLINT}, #{path,jdbcType=VARCHAR}, #{listen,jdbcType=BIT}, 
+      #{isRemote,jdbcType=BIT}, #{protocol,jdbcType=TINYINT}, #{authentication,jdbcType=VARCHAR}, 
+      #{indexTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="only.leo.wfm.common.beans.IndexDirectoryDO">
+    insert into INDEX_DIRECTORY_TABLE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="path != null">
+        path,
+      </if>
+      <if test="listen != null">
+        listen,
+      </if>
+      <if test="isRemote != null">
+        is_remote,
+      </if>
+      <if test="protocol != null">
+        protocol,
+      </if>
+      <if test="authentication != null">
+        authentication,
+      </if>
+      <if test="indexTime != null">
+        index_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=SMALLINT},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="listen != null">
+        #{listen,jdbcType=BIT},
+      </if>
+      <if test="isRemote != null">
+        #{isRemote,jdbcType=BIT},
+      </if>
+      <if test="protocol != null">
+        #{protocol,jdbcType=TINYINT},
+      </if>
+      <if test="authentication != null">
+        #{authentication,jdbcType=VARCHAR},
+      </if>
+      <if test="indexTime != null">
+        #{indexTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="only.leo.wfm.common.beans.IndexDirectoryDOExample" resultType="java.lang.Long">
+    select count(*) from INDEX_DIRECTORY_TABLE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update INDEX_DIRECTORY_TABLE
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=SMALLINT},
+      </if>
+      <if test="record.path != null">
+        path = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.listen != null">
+        listen = #{record.listen,jdbcType=BIT},
+      </if>
+      <if test="record.isRemote != null">
+        is_remote = #{record.isRemote,jdbcType=BIT},
+      </if>
+      <if test="record.protocol != null">
+        protocol = #{record.protocol,jdbcType=TINYINT},
+      </if>
+      <if test="record.authentication != null">
+        authentication = #{record.authentication,jdbcType=VARCHAR},
+      </if>
+      <if test="record.indexTime != null">
+        index_time = #{record.indexTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update INDEX_DIRECTORY_TABLE
+    set id = #{record.id,jdbcType=SMALLINT},
+      path = #{record.path,jdbcType=VARCHAR},
+      listen = #{record.listen,jdbcType=BIT},
+      is_remote = #{record.isRemote,jdbcType=BIT},
+      protocol = #{record.protocol,jdbcType=TINYINT},
+      authentication = #{record.authentication,jdbcType=VARCHAR},
+      index_time = #{record.indexTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="only.leo.wfm.common.beans.IndexDirectoryDO">
+    update INDEX_DIRECTORY_TABLE
+    <set>
+      <if test="path != null">
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="listen != null">
+        listen = #{listen,jdbcType=BIT},
+      </if>
+      <if test="isRemote != null">
+        is_remote = #{isRemote,jdbcType=BIT},
+      </if>
+      <if test="protocol != null">
+        protocol = #{protocol,jdbcType=TINYINT},
+      </if>
+      <if test="authentication != null">
+        authentication = #{authentication,jdbcType=VARCHAR},
+      </if>
+      <if test="indexTime != null">
+        index_time = #{indexTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="only.leo.wfm.common.beans.IndexDirectoryDO">
+    update INDEX_DIRECTORY_TABLE
+    set path = #{path,jdbcType=VARCHAR},
+      listen = #{listen,jdbcType=BIT},
+      is_remote = #{isRemote,jdbcType=BIT},
+      protocol = #{protocol,jdbcType=TINYINT},
+      authentication = #{authentication,jdbcType=VARCHAR},
+      index_time = #{indexTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+</mapper>
