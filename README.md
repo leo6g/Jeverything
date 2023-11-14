@@ -30,6 +30,7 @@
 ##### 发行版下载：
 
 ######Windows特制版
+
 如Win电脑上已有java运行环境并配置JAVA_HOME环境变量,可以单独下载Windows特制版
 
 [JEverything.zip](https://github.com/leo6g/Jeverything/releases)
@@ -40,7 +41,7 @@
 
 Window,MAC,Linux平台都可使用jar包运行
 
-[JEverything.jar] (https://github.com/leo6g/Jeverything/releases)
+[JEverything.jar](https://github.com/leo6g/Jeverything/releases)
 
 ##### 安装运行：
 
