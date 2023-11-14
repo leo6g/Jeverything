@@ -5,7 +5,38 @@
     <em>Jeverything,search everything in your device.</em>
 </p>
 
+<p align="center">
+  <a href="LICENSE" target="_blank">
+    <img alt="MIT License" src="https://img.shields.io/github/license/gaozhangmin/aliyunpan?style=flat-square&logoColor=white" />
+  </a>
 
+  <!-- TypeScript Badge -->
+  <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-blue?style=flat-square&logo=typescript&logoColor=white" />
+
+  <!-- VUE Badge -->
+  <img alt="VUE" src="https://img.shields.io/badge/Vue.js-35495E?style=flat-square&logo=vuedotjs&logoColor=white" />
+
+  <a href="https://github.com/gaozhangmin/aliyunpan/releases" target="_blank">
+    <img alt="macOS" src="https://img.shields.io/badge/-macOS-black?style=flat-square&logo=apple&logoColor=white" />
+  </a>
+
+  <a href="https://github.com/gaozhangmin/aliyunpan/releases" target="_blank">
+    <img alt="Windows" src="https://img.shields.io/badge/-Windows-blue?style=flat-square&logo=windows&logoColor=white" />
+  </a>
+
+  <a href="https://github.com/gaozhangmin/aliyunpan/releases" target="_blank">
+    <img alt="Linux" src="https://img.shields.io/badge/-Linux-yellow?style=flat-square&logo=linux&logoColor=white" />
+  </a>  
+
+  <a href="https://github.com/gaozhangmin/aliyunpan/stargazers" target="_blank">
+    <img alt="Star" src="https://img.shields.io/github/stars/gaozhangmin/aliyunpan?style=social" />
+  </a>
+
+  <a href="https://github.com/gaozhangmin/aliyunpan/releases/latest" target="_blank">
+    <img alt="Star" src="https://img.shields.io/github/downloads/gaozhangmin/aliyunpan/total?style=social" />
+  </a>
+
+</p>
 
 快速搜索文件工具，类似Everything工具,功能丰富，运行丝滑。极速搜索文件，支持高级搜索，局域网分享、快传、文件在线预览、音视频播放、推流等功能，全搞定。
 同时可部署到服务端实现远程文件管理。JAVA版Everything
@@ -33,15 +64,15 @@
 ######Windows特制版
 如Win电脑上已有java运行环境并配置JAVA_HOME环境变量,可以单独下载Windows特制版
 
-[JEverything.zip]
+[JEverything.zip](https://github.com/leo6g/Jeverything/releases)
 
 如电脑没有java运行环境，可以下载包含jre的版本
 
-[JEverything_JRE_windows.zip]
+[JEverything_JRE_windows.zip](https://github.com/leo6g/Jeverything/releases)
 
 Window,MAC,Linux平台都可使用jar包运行
 
-[JEverything.jar]
+[JEverything.jar] (https://github.com/leo6g/Jeverything/releases)
 
 ##### 安装运行：
 

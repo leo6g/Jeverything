@@ -30,15 +30,15 @@ Fast File Search Tool, Similar to Everything, Feature-Rich, Smooth Performance. 
 ###### **Windows custom Edition** 
  If Java is already installed on your Windows computer and JAVA_HOME environment variable is configured, you can download the standalone Windows special edition: 
 
-[JEverything.zip] 
+[JEverything.zip](https://github.com/leo6g/Jeverything/releases)
 
  If Java is not installed, you can download the version that includes JRE: 
 
-[JEverything_JRE_windows.zip] 
+[JEverything_JRE_windows.zip](https://github.com/leo6g/Jeverything/releases)
 ###### **JAR** 
 The JAR file can run on Windows, Mac, and Linux platforms
 
-[JEverything.jar]
+[JEverything.jar](https://github.com/leo6g/Jeverything/releases)
 
 ##### Installation and Execution:
 
