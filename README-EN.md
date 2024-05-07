@@ -63,7 +63,7 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 ###### Initial Startup
 
-During the initial startup, you can configure system settings.
+During the initial startup, you can configure system settings,including password.(username is admin)
 
 ![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 
@@ -141,7 +141,5 @@ file:key1 key2 !key3 path:D:\dir1\* | file:key1 key2 !key3 path:D:\dir2\*
 Explanation: Search for files under the folder D:\dir1\ that contain key1 and key2 but not key3, and also search for files under the folder D:\dir2\ with the same criteria.
 
 ##### Note:
-首次启动，可全盘扫描文件。
-
-During the initial startup, you can perform a full disk scan for files.
+During the initial startup, you can perform a full disk scan for files. username is admin
 

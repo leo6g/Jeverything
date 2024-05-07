@@ -67,7 +67,7 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 ###### 首次启动
 
-首次启动，可进行系统初始化设置。
+首次启动，可进行系统初始化设置,包括初始化密码设置（用户名admin）
 
 ![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 
@@ -137,7 +137,7 @@ file:key1 key2 !key3 path:D:\dir1\\* | file:key1 key2 !key3 path:D:\dir2\\*
 说明：搜索D:\dir1\文件夹下的 包含key1 key2 但不包含key3的文件 和 D:\dir2\文件夹下的 包含key1 key2 但不包含key3的文件
 
 ##### Note:
-首次启动，可全盘扫描文件。
+首次启动，可全盘扫描文件。用户名为admin
 
 
 
