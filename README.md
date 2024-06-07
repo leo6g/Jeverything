@@ -1,61 +1,57 @@
 <p align="center">
-    <br> <a href="README-EN.md">English</a>  | <a href="README.md">中文</a>
+    <br> <a href="README.md">English</a>  | <a href="README-ZH.md">中文</a>
 </p>
 <p align="center">
     <em>Jeverything,search everything in your device.</em>
 </p>
 
+Fast File Search Tool, Similar to Everything, Feature-Rich, Smooth Performance. Lightning-fast file search, advanced search support, LAN sharing, fast file transfer, online file preview, audio/video playback, streaming, etc., all in one. Also deployable on the server for remote file management. JAVA version of Everything.
 
-快速搜索文件工具，类似Everything工具,功能丰富，运行丝滑。极速搜索文件，支持高级搜索，局域网分享、快传、文件在线预览、音视频播放、推流等功能，全搞定。
-同时可部署到服务端实现远程文件管理。JAVA版Everything
+##### Features::
 
-##### 功能特性:
+- Quickly index directories, real-time updates for file changes.
+- Rapid file and folder search, supports advanced search.
+- Online preview for images and documents, online playback for audio/video.
+- HTTP streaming.
+- Supports indexing network files (SMB).
+- Online file sharing, supports password-protected sharing.
+- Minimal resource usage, smooth performance.
+- Accessible from multiple terminals (HTTP).
+- Convenient operations.
+- No installation required, one-click start, leaves no residue upon deletion.
+- Cross-platform support.
 
-- 快速索引目录,实时更新文件变动
-- 快速搜索文件，文件夹,支持高级搜索
-- 图片文档在线预览,音视频在线播放
-- http推流
-- 支持索引网络文件(SMB)
-- 文件在线分享，支持提取码方式
-- 极少资源占用,运行丝滑
-- 多终端访问(HTTP)
-- 操作便利
-- 无需安装，一键启动,删除即走，无任何残留
-- 全平台运行支持
+#####  **System Requirements** ：
 
-##### 环境要求：
+ All platforms, JDK 1.8+ 
 
-全平台，jdk 1.8+
+#####  **Distribution Downloads** ：
 
-##### 发行版下载：
-
-######Windows特制版
-
-如Win电脑上已有java运行环境并配置JAVA_HOME环境变量,可以单独下载Windows特制版
+###### **Windows custom Edition** 
+ If Java is already installed on your Windows computer and JAVA_HOME environment variable is configured, you can download the standalone Windows special edition: 
 
 [JEverything.zip](https://github.com/leo6g/Jeverything/releases)
 
-如电脑没有java运行环境，可以下载包含jre的版本
+ If Java is not installed, you can download the version that includes JRE: 
 
 [JEverything_JRE_windows.zip](https://github.com/leo6g/Jeverything/releases)
 
-Window,MAC,Linux平台都可使用jar包运行
+###### **JAR** 
+The JAR file can run on Windows, Mac, and Linux platforms
 
 [JEverything.jar](https://github.com/leo6g/Jeverything/releases)
 
-##### 安装运行：
+##### Installation and Execution:
 
-Windows特制版，直接双击运行
+For the Windows custom version, simply double-click to run.
 
-jar运行
-
+To run the JAR file:
 ```
 java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 ```
 
 
-
-##### 界面展示：
+##### User Interface Showcase:
 
 ![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 ---------------
@@ -63,15 +59,15 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 ---------------
 ![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
-##### 使用说明：
+##### Instructions for Use：
 
-###### 首次启动
+###### Initial Startup
 
-首次启动，可进行系统初始化设置,包括初始化密码设置（用户名admin）
+During the initial startup, you can configure system settings,including password.(username is admin)
 
 ![1699930678792](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699930678792.png)
 
-主界面，默认显示最近一天变动文件列表，可通过文件类型筛选不同类型文件变动。双击文件记录，可直接打开本地文件。双击远程文件可在线预览
+Main Interface: By default, it displays a list of files that have changed in the last day. You can filter different types of file changes by file type. Double-clicking on a file record allows you to directly open the local file. Double-clicking on a remote file enables online preview.
 
 
 ##### 
@@ -80,64 +76,70 @@ java -jar -Dserver.port=8082 -Xms256m -Xmx256m JEverything.jar
 
 
 
-###### 设置
+###### Settings
 
-基本设置
+Basic Settings
 
 ![1699931135884](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931135884.png)
 
-可通过添加 文件后缀 来自定义索引，建议索引后，文件类型为其它文件
+You can customize the index by adding file extensions. It is recommended that after indexing, the file type be set to "Other Files."
 
 ![1699931248511](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931248511.png)
 
-建立索引可选择是否监听文件变动，更改后实时生效，监听机制只需消耗很小（可忽略不计）的计算机资源，就可以监听全部文件变动。
+Establishing an index allows you to choose whether to monitor file changes. Changes take effect in real-time after modification. The monitoring mechanism consumes minimal (almost negligible) computer resources to monitor all file changes.
 
-图片预览
+Image preview
 
 ![1699931927037](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931927037.png)
 
-视频播放
+video play
 
 ![1699931976545](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699931976545.png)
 
-音频播放
+audio play
 
 ![1699932014761](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932014761.png)
 
-音频后台播放
+audio play in background 
 
 ![1699932031613](https://github.com/leo6g/Jeverything/blob/master/README.assets/1699932031613.png)
 
 
 
-###### 普通搜索
+###### Regular Search
 
-搜文件:搜索同时包含key1,key2,但不包含key3的文件名
+Search for files: Search for files with both key1 and key2 but not key3 in the filename.
 
+```
 key1 key2 !key3  
+```
 
-搜文件夹: 搜索文件夹名包含key的文件夹下的所有文件
+Search for folders: Search for all files under folders whose names contain key.
 
+```
 path:*key*  
+```
 
-搜全部: * 
+Search for all: *
 
-###### 高级搜索
+###### Advanced Search
 
-文件，文件夹搜索可以结合使用，来更进一步的筛选文件
+File and folder searches can be combined for more refined file filtering.
 
-file:key1 key2 !key3 path:D:\dir1\\*
+```
+file:key1 key2 !key3 path:D:\dir1\*
+```
 
 
 
-多个筛选条件的结果  可以使用 | 来合并结果集
+Results from multiple filter conditions can be merged using |.
 
-file:key1 key2 !key3 path:D:\dir1\\* | file:key1 key2 !key3 path:D:\dir2\\* 
+```
+file:key1 key2 !key3 path:D:\dir1\* | file:key1 key2 !key3 path:D:\dir2\* 
+```
 
-说明：搜索D:\dir1\文件夹下的 包含key1 key2 但不包含key3的文件 和 D:\dir2\文件夹下的 包含key1 key2 但不包含key3的文件
+Explanation: Search for files under the folder D:\dir1\ that contain key1 and key2 but not key3, and also search for files under the folder D:\dir2\ with the same criteria.
 
 ##### Note:
-首次启动，可全盘扫描文件。用户名为admin
-
-
+During the initial startup, you can perform a full disk scan for files. username is admin
 
